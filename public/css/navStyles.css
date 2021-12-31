@@ -1,0 +1,41 @@
+nav{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+#loginCard{
+    display: none;
+    margin-top: 15px;
+}
+
+.loginContain{
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   padding: 15px;
+}
+
+
+.mainBtn{
+    width: 81px;
+    height: 32px;
+    background-color:#3366FF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+input{
+    width: 120px;
+    height: 30px;
+}
+
+#goalBtn{
+    visibility: hidden;
+}

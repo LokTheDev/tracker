@@ -1,0 +1,120 @@
+<%- include("partials/header") %>
+<link rel="stylesheet" href="/css/index.css" />
+
+<body>
+  
+    <div class="goal">
+      <h1><%= goalItems[0].textGoal %></h1>
+      <div class="progress">
+        <div>
+          <div class="progress-indicator" style="width: <%= width %>">
+            <span style="color: transparent">.</span>
+            <div class="progress-text">
+              <%= sumInfo[0] %> / <%= goalItems[0].savingGoal %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sumUp">
+      <div class="salary sumCard">
+        Toal Income:
+        <div class="sumToal">           
+            <%= sumInfo[1] %>
+            <div class="sumCompare"> 
+                <span id="compare-0"> 
+                    <%= compare[0] %>
+                </span> 
+            </div>
+        </div>
+
+        
+
+      </div>
+
+      <div class="saving sumCard">
+        Toal Saving:
+        <div class="sumToal savingSum">
+            <%= sumInfo[2] %>
+        </div>
+        <div class="sumCompare">
+            <span id="compare-1"> 
+                <%= compare[1] %>
+            </span> 
+        </div>
+      </div>
+
+      <div class="invest sumCard">
+        Toal Invest:
+        <div class="sumTotal investSum">
+            <%= sumInfo[3] %>
+        </div>
+
+        <div class="sumCompare">
+            <span id="compare-2"> 
+                <%= compare[2] %>
+            </span> 
+        </div>
+      </div>
+    </div>
+
+    <div class="list">
+      <h2>Budget Tracker</h2>
+    </div>
+
+    <div class="list">
+      <% incomeItems.forEach(function(item){ %>
+      <div class="card">
+        <div class="salaryTitle">
+          <span class="title">Salary:</span>
+          <%= item.salary %>
+        </div>
+
+        <div class="savingTitle">
+          <span class="title">Saving:</span>
+          <%= item.saving %>
+        </div>
+
+        <div class="investTitle">
+          <span class="title">Invest:</span>
+          <%= item.invest %>
+        </div>
+
+        <div class="date">
+          <div class="datePos"><%= item.date%></div>
+        </div>
+
+        <button class="arrowImg">
+            <a href="/item/<%= item._id%>">
+                <img src="/pic/navigate_next_black_24dp.svg">
+            </a>
+        </button>
+      </div>
+      <% }) %>
+
+        <div class="menuBar">
+            <form method="post">
+            <input type="number" name="newSalary" placeholder="Salary" required>
+            <input type="number" name="newSaving" placeholder="Saving" required>
+            <input type="number" name="newInvest" placeholder="Invested" required>
+            <button type="submit">+</button>
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+
+  </div>
+
+
+  <script src="/JS/MainPanel.js"></script>
+  <script src="/JS/login.js"></script>
+ 
+
+</body>
+
+</html>
